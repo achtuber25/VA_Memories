@@ -32,7 +32,13 @@
       let username = document.forms["myForm"]["name-6555"].value
       let password = document.forms["myForm"]["password"].value
       let is_verified = 0
-      if(username == "aditya"&& password == "champa"){
+      if(username.toLowerCase() == "aditya"&& password.toLowerCase() == "loveyou2vandu"){
+        alert("welcome Aditya here is your collection")
+        window.location.href='Memories.html'
+        is_verified = 1
+      }
+      else if(username.toLowerCase() == "vandna"&& password.toLowerCase() == "iloveyouaditya"){
+        alert("❤️ Welcome vandna ❤️")
         window.location.href='Memories.html'
         is_verified = 1
       }
@@ -55,7 +61,7 @@
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base" href="index.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base" href="Memories.html" style="padding: 10px 20px;">Memories</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base" href="index.html" style="padding: 10px 20px;">Memories</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base" href="Admin.html" style="padding: 10px 20px;">Admin</a>
 </li></ul>
           </div>
@@ -64,7 +70,7 @@
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html" style="padding: 10px 20px;">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Memories.html" style="padding: 10px 20px;">Memories</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html" style="padding: 10px 20px;">Memories</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Admin.html" style="padding: 10px 20px;">Admin</a>
 </li></ul>
               </div>
@@ -77,6 +83,7 @@
       <div class="u-align-left u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
         <div class="u-expanded-width-xs u-form u-form-1">
           <form name = "myForm"action="Memories.html" method="POST" class="u-clearfix u-form-spacing-18 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+            <p class='popup1' id="sms"></p>
             <div class="u-form-group u-form-name">
               <label for="name-6555" class="u-form-control-hidden u-label"></label>
               <input type="text" placeholder="Enter your Name" id="name-6555" name="name" class="u-border-2 u-border-grey-30 u-input u-input-rectangle u-radius-9 u-white" required="">
@@ -87,28 +94,14 @@
             </div>
             <div class="u-align-center u-form-group u-form-submit">
               <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius-9">Login</a>
-              <input type="submit" value="submit" class="u-form-control-hidden" onclick="myFunction()">
+              <input type="submit" id = "submit" value="submit" class="u-form-control-hidden" onclick="myFunction()">
             </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
+            
           </form>
         </div>
       </div>
     </section>
     
-    
-    
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
-      </a>. 
-    </section>
+
   </body>
 </html>
