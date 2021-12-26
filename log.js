@@ -1,39 +1,37 @@
-(function (_0x28a97e, _0x581883) {
-    const _0x3114b0 = _0x19cf,
-        _0x3695a0 = _0x28a97e();
-    while (!![]) {
-        try {
-            const _0x2836a0 = -parseInt(_0x3114b0(0x7c)) / 0x1 * (parseInt(_0x3114b0(0x6e)) / 0x2) + -parseInt(_0x3114b0(0x73)) / 0x3 + parseInt(_0x3114b0(0x7b)) / 0x4 + -parseInt(_0x3114b0(0x78)) / 0x5 + -parseInt(_0x3114b0(0x71)) / 0x6 * (parseInt(_0x3114b0(0x6d)) / 0x7) + parseInt(_0x3114b0(0x6c)) / 0x8 + parseInt(_0x3114b0(0x7f)) / 0x9;
-            if (_0x2836a0 === _0x581883) break;
-            else _0x3695a0['push'](_0x3695a0['shift']());
-        } catch (_0x24c676) {
-            _0x3695a0['push'](_0x3695a0['shift']());
-        }
-    }
-}(_0x1454, 0x6b191));
-
 function myFunction() {
-    const _0x2014d8 = _0x19cf;
-    let _0x25f52c = document[_0x2014d8(0x7e)][_0x2014d8(0x70)][_0x2014d8(0x77)][_0x2014d8(0x6b)],
-        _0x6dd54e = document[_0x2014d8(0x7e)][_0x2014d8(0x70)][_0x2014d8(0x6f)][_0x2014d8(0x6b)],
-        _0x4cdabc = 0x0;
-    if (_0x25f52c[_0x2014d8(0x76)]() == 'aditya' && _0x6dd54e[_0x2014d8(0x76)]() == _0x2014d8(0x7a)) _0x4cdabc = 0x1, localStorage[_0x2014d8(0x79)](_0x2014d8(0x72), _0x4cdabc), alert('welcome\x20Aditya\x20here\x20is\x20your\x20collection'), window[_0x2014d8(0x75)]['href'] = _0x2014d8(0x80);
-    else _0x25f52c[_0x2014d8(0x76)]() == _0x2014d8(0x74) && _0x6dd54e[_0x2014d8(0x76)]() == 'iloveyouaditya' ? (_0x4cdabc = 0x1, localStorage['setItem']('auth', _0x4cdabc), alert('❤️\x20Welcome\x20vandna\x20❤️'), window[_0x2014d8(0x75)][_0x2014d8(0x7d)] = 'Memories.html') : (_0x4cdabc = 0x0, localStorage[_0x2014d8(0x79)](_0x2014d8(0x72), _0x4cdabc), alert(_0x2014d8(0x6a)));
-}
+    let name = document.forms["myForm"]["name"].value
+    let key = document.forms["myForm"]["password"].value
+    let verified = 0
+    console.log(name, key)
+    if (name.toLowerCase() == "aditya" && key.toLowerCase() == "loveyou2vandna") {
+        verified = 1
+        localStorage.setItem("auth", verified)
+        alert("here is your collection")
+        window.location.href = "Memories.html"
 
-function _0x19cf(_0x4647aa, _0x12dbdc) {
-    const _0x1454ee = _0x1454();
-    return _0x19cf = function (_0x19cf9b, _0x28eae6) {
-        _0x19cf9b = _0x19cf9b - 0x6a;
-        let _0x246d23 = _0x1454ee[_0x19cf9b];
-        return _0x246d23;
-    }, _0x19cf(_0x4647aa, _0x12dbdc);
-}
-
-function _0x1454() {
-    const _0x467c6a = ['loveyou2vandna', '3040064yemMvj', '1SeOlYX', 'href', 'forms', '19245465VDpCnx', 'Memories.html', 'get\x20lost', 'value', '225208yImvaY', '7iZghOU', '739456vTKaIv', 'password', 'myForm', '4784634rqhOTy', 'auth', '1339680dSUeOk', 'vandna', 'location', 'toLowerCase', 'name-6555', '4370760vyVDnc', 'setItem'];
-    _0x1454 = function () {
-        return _0x467c6a;
-    };
-    return _0x1454();
+    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveyouaditya") {
+        verified = 1
+        localStorage.setItem("auth", verified)
+        alert("❤️Welcome Baby❤️ and Love You 2 😘")
+        window.location.href = "Memories.html"
+    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveuaditya") {
+        verified = 1
+        localStorage.setItem("auth", verified)
+        alert("❤️Welcome Baby❤️ and Love You 2  😘")
+        window.location.href = "Memories.html"
+    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveyouaadi") {
+        verified = 1
+        localStorage.setItem("auth", verified)
+        alert("❤️Welcome Baby❤️ and Love You 2 😘")
+        window.location.href = "Memories.html"
+    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveuaadi") {
+        verified = 1
+        localStorage.setItem("auth", verified)
+        alert("❤️Welcome Baby❤️ and Love You 2 😘")
+        window.location.href = "Memories.html"
+    } else {
+        verified = 0
+        localStorage.setItem("auth", verified)
+        alert("Get Lost 😠")
+    }
 }
