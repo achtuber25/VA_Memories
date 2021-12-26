@@ -29,7 +29,7 @@ function myFunction() {
         localStorage.setItem("auth", verified)
         alert("❤️Welcome Baby❤️ and Love You 2 😘")
         window.location.href = "Memories.html"
-    } else if (name.toLowerCase() == "aditya" && key.toLowerCase() == "Aot@25sep") {
+    } else if (name.toLowerCase() == "aditya" && key == "Aot@25sep") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("Welcome")
