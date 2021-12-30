@@ -3,6 +3,17 @@ function myFunction() {
     let key = document.forms["myForm"]["password"].value
     let verified = 0
     console.log(name, key)
+
+    let timeout;
+
+    function myFunction() {
+        timeout = setTimeout(alertFunc, 3000);
+    }
+
+    function alertFunc() {
+        alert("Hello!");
+    }
+
     if (name.toLowerCase() == "aditya" && key.toLowerCase() == "loveyou2vandna") {
         verified = 1
         localStorage.setItem("auth", verified)
