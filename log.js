@@ -4,16 +4,6 @@ function myFunction() {
     let verified = 0
     console.log(name, key)
 
-    let timeout;
-
-    function myFunction() {
-        timeout = setTimeout(alertFunc, 3000);
-    }
-
-    function alertFunc() {
-        alert("Hello!");
-    }
-
     if (name.toLowerCase() == "aditya" && key.toLowerCase() == "loveyou2vandna") {
         verified = 1
         localStorage.setItem("auth", verified)
@@ -49,5 +39,21 @@ function myFunction() {
         verified = 0
         localStorage.setItem("auth", verified)
         alert("Get Lost 😠")
+    }
+}
+
+function popup() {
+    localStorage.setItem("auth", 0)
+
+    while (1) {
+        let keyword = prompt("enter unique keyword")
+        if (keyword == null)
+            continue
+        if (keyword.toString().toLowerCase() != String("champa")) {
+            alert("get lost ... this website is not 4 u")
+        } else {
+            alert("verified")
+            break
+        }
     }
 }
