@@ -41,19 +41,3 @@ function myFunction() {
         alert("Get Lost 😠")
     }
 }
-
-function popup() {
-    localStorage.setItem("auth", 0)
-
-    while (1) {
-        let keyword = prompt("enter unique keyword")
-        if (keyword == null)
-            continue
-        if (keyword.toString().toLowerCase() != String("champa")) {
-            alert("get lost ... this website is not 4 u")
-        } else {
-            alert("verified")
-            break
-        }
-    }
-}
