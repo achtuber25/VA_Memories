@@ -2,6 +2,8 @@
 <html>
 	
 <head>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 	<title>
 		Creating Search Bar using HTML
 		CSS and Javascript
@@ -65,19 +67,74 @@ display: list-item;
 	</ol>
 	
 	<!-- linking javascript -->
-	<script>
+	<script type="text/javascript">
         // JavaScript code
-    function search_animal() {
+	
+    async function search_animal() {
 	let input = document.getElementById('searchbar').value
 	input=input.toLowerCase();
 	let x = document.getElementsByClassName('animals');
-	
+	function get_mood_of_aadi(){
+		const options = {
+		method: 'POST',
+		headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+		body: JSON.stringify({offset: -1, limit: 1, timeout: null})
+		};
+
+		let data =fetch('https://api.telegram.org/bot5463908143%3AAAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg/getUpdates', options)
+					.then(response => response.json())
+					.then(response => console.log(response))
+					.catch(err => console.error(err));
+	}
+	function send_msg(text,token){
+		const options = {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				text: text,
+				disable_web_page_preview: false,
+				disable_notification: false,
+				reply_to_message_id: null,
+				chat_id: '1120121505'
+			})
+			};
+
+			fetch('https://api.telegram.org/bot'+token+'/sendMessage', options)
+			.then(response => response.json())
+			.then(response => console.log(response))
+			.catch(err => console.error(err));
+	}
 	for (i = 0; i < x.length; i++) {
         if(input=="champa"){
-            alert("Welcome to the App")
+            window.alert("Welcome to the App")
             window.location.href = "index2.html"
 			break
         }
+		if(input=="mymood"){
+			const { value: text } = await Swal.fire({
+			title: '🧑 Kesi ho aaj Anaya ki hone wali mammy😘... 👩?',
+			input: 'text',
+			inputLabel: 'emoji or ek word dena mood k according baby',
+			inputPlaceholder: 'Mood'
+			})
+			send_msg(text,"5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+			if (text) {
+			Swal.fire(`Mood Saved : ${text}`)
+			}
+			break
+		}
+		if(input=="showmood"){
+			const { value: text } = await Swal.fire({
+			title: "Vandna - "+localStorage.getItem("vandna_mood")+"/n"+"Aditya - "+localStorage.getItem("lifepartner_mood"),
+			inputPlaceholder: 'Mood'
+			})
+			break
+		}
+        
 		if (!x[i].innerHTML.toLowerCase().includes(input)) {
 			x[i].style.display="none";
 		}
@@ -86,7 +143,6 @@ display: list-item;
 		}
 	}
     }
-
     </script>
 </body>
 
