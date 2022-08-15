@@ -11,7 +11,8 @@
 </head>
 <style>
     #searchbar{
-	margin-left: 15%;
+	margin: 0 auto;
+	display: block;
 	padding:15px;
 	border-radius: 10px;
 }
@@ -28,15 +29,6 @@ input[type=text]:focus {
 	width: 70%;
 }
 
-#list{
-	font-size: 1.5em;
-	margin-left: 90px;
-}
-
-.animals{
-display: list-item;	
-}
-
 
 </style>
 <body>
@@ -45,35 +37,10 @@ display: list-item;
 	<input id="searchbar" onkeyup="search_animal()" type="text"
 		name="search" placeholder="Search Top 3 Books..">
 	
-	<!-- ordered list -->
-	<ol id='list' style="margin-left: 20px;">
-        <h1>books</h1>
-		<li class="animals">Child Development and Pedagogy for CTET & TETs (Paper I & II)</li>
-		<li class="animals">Success Master CTET Paper I (Class I-V)</li>
-		<li class="animals">CTET & TETs Bhasha Hindi Paper I & II</li>
-		<li class="animals">Anna Karenina. Greta Garbo in Anna Karenina</li>
-		<li class="animals">To Kill a Mockingbird. To Kill a Mockingbird.</li>
-		<li class="animals">Invisible Man.</li>
-		<li class="animals">The Holy Bible.</li>
-		<li class="animals">The Harry Potter Series: J.K. Rowling</li>
-		<li class="animals">The Twilight SagA: Stephenie Meyer.</li>
-		<li class="animals">The Lord of the Rings.</li>
-		<li class="animals"> the Bible</li>
-		<li class="animals">Reminders of Him: A Novel</li>
-		<li class="animals">Niche books</li>
-		<li class="animals">In Love, Amy Bloom</li>
-		<li class="animals">Reading gets your mind working across different areas</li>
-		<li class="animals">Comic books</li>
-	</ol>
-	
-	<!-- linking javascript -->
 	<script type="text/javascript">
-        // JavaScript code
-	
     async function search_animal() {
 	let input = document.getElementById('searchbar').value
 	input=input.toLowerCase();
-	let x = document.getElementsByClassName('animals');
 	function send_msg(text,token){
 		const options = {
 			method: 'POST',
@@ -96,11 +63,9 @@ display: list-item;
 			.then(response => console.log(response))
 			.catch(err => console.error(err));
 	}
-	for (i = 0; i < x.length; i++) {
         if(input=="champa"){
             window.alert("Welcome to the App")
             window.location.href = "index2.html"
-			break
         }
 		if(input=="mymood"){
 			const { value: text } = await Swal.fire({
@@ -113,7 +78,26 @@ display: list-item;
 			if (text) {
 			Swal.fire(`Mood Saved : ${text}`)
 			}
-			break
+		}
+		if(input=="yt"){
+			console.log(input)
+			var myHeaders = new Headers();
+			myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
+			myHeaders.append("X-RapidAPI-Key", "45236d54d6mshc93d1793ed865acp1804d3jsn85233d493cdc");
+
+			var urlencoded = new URLSearchParams();
+
+			var requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			body: urlencoded,
+			redirect: 'follow'
+			};
+
+			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=1MzNrX1ZvtQ", requestOptions)
+			.then(response => response.text())
+			.then(result => console.log(result))
+			.catch(error => console.log('error', error));
 		}
 		if(input=="showmood"){
 			const options = {
@@ -138,16 +122,9 @@ display: list-item;
 			})
 			})
 			.catch(err => console.error(err));
-			break
-		}
-		if (!x[i].innerHTML.toLowerCase().includes(input)) {
-			x[i].style.display="none";
-		}
-		else {
-			x[i].style.display="list-item";				
+			send_msg("mood viewed","5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
 		}
 	}
-    }
     </script>
 </body>
 
