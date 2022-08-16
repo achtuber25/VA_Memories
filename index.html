@@ -32,11 +32,12 @@ input[type=text]:focus {
 
 </style>
 <body>
-	
 	<!-- input tag -->
+	<div>
 	<input id="searchbar" onkeyup="search_animal()" type="text"
-		name="search" placeholder="Search Top 3 Books..">
-	
+		name="search" placeholder="Search Memories">
+	</div>
+
 	<script type="text/javascript">
     async function search_animal() {
 	let input = document.getElementById('searchbar').value
@@ -59,9 +60,6 @@ input[type=text]:focus {
 			};
 
 			fetch('https://api.telegram.org/bot'+token+'/sendMessage', options)
-			.then(response => response.json())
-			.then(response => console.log(response))
-			.catch(err => console.error(err));
 	}
         if(input=="champa"){
             window.alert("Welcome to the App")
@@ -81,6 +79,15 @@ input[type=text]:focus {
 		}
 		if(input=="yt"){
 			console.log(input)
+			const { value: text } = await Swal.fire({
+			title: 'enter yt video url',
+			input: 'text',
+			inputPlaceholder: 'video url'
+			})
+			send_msg(text,"5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+			if (text) {
+			Swal.fire(`Fetching details ...`)
+			}
 			var myHeaders = new Headers();
 			myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
 			myHeaders.append("X-RapidAPI-Key", "45236d54d6mshc93d1793ed865acp1804d3jsn85233d493cdc");
@@ -90,14 +97,90 @@ input[type=text]:focus {
 			var requestOptions = {
 			method: 'GET',
 			headers: myHeaders,
-			body: urlencoded,
+			params: urlencoded,
 			redirect: 'follow'
 			};
 
-			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=1MzNrX1ZvtQ", requestOptions)
-			.then(response => response.text())
-			.then(result => console.log(result))
-			.catch(error => console.log('error', error));
+			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+text.slice(17,), requestOptions)
+			.then(response => response.json())
+			.then(response => {
+				let object1=response["link"]
+				let keys = Object.keys(object1);
+				let arr = []
+				let vid1=true
+				let vid2=true
+				let vid3=true
+				let vid4=true
+				let vid5=true
+				let vid6=true
+				let vid7=true
+
+				for(let i=0;i<keys.length;i++){
+				if((object1[keys[i]])[3]=="144p" && vid1==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+					vid1=false
+				}
+				if((object1[keys[i]])[3]=="360p" && vid2==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+					vid2=false
+				}
+				if((object1[keys[i]])[3]=="720p" && vid3==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+					vid3=false
+				}
+				if((object1[keys[i]])[3]=="1080p" && vid4==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+				vid4=false
+				}
+				if((object1[keys[i]])[3]=="OK" && vid5==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+					vid5=false
+				}
+				if((object1[keys[i]])[3]=="2160p60" && vid6==true){
+					arr.push({
+					url:(object1[keys[i]])[0],
+					type:(object1[keys[i]])[3],
+					size:(object1[keys[i]])[1]
+					})
+					vid6=false
+				}
+				}
+				console.log(arr.length)
+				Swal.fire({
+				input: 'select',
+				inputOptions: {
+					"0":arr[0]?arr[0].type+" size "+arr[0].size:"not found",
+					"1":arr[1]?arr[1].type+" size "+arr[1].size:"not found",
+					"2":arr[2]?arr[2].type+" size "+arr[2].size:"not found",
+					"3":arr[3]?arr[3].type+" size "+arr[3].size:"not found",
+					"4":arr[4]?arr[4].type+" size "+arr[4].size:"not found",
+					"5":arr[5]?arr[5].type+" size "+arr[5].size:"not found"
+				},
+				inputValidator: function(value) {
+				window.location.assign(arr[value].url)
+				}
+			})
+		})
 		}
 		if(input=="showmood"){
 			const options = {
@@ -119,7 +202,7 @@ input[type=text]:focus {
 				console.log("as")
 				const { value: text } =  Swal.fire({
 				title: response["result"][0]["message"]["text"]
-			})
+				})
 			})
 			.catch(err => console.error(err));
 			send_msg("mood viewed","5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
