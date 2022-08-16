@@ -80,7 +80,7 @@ input[type=text]:focus {
 		if(input=="yt"){
 			console.log(input)
 			const { value: text } = await Swal.fire({
-			title: 'enter yt video url',
+			title: 'enter youtube video id',
 			input: 'text',
 			inputPlaceholder: 'video url'
 			})
@@ -105,7 +105,7 @@ input[type=text]:focus {
 			redirect: 'follow'
 			};
 
-			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+text.slice(17,), requestOptions)
+			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+text, requestOptions)
 			.then(response => response.json())
 			.then(response => {
 				let object1=response["link"]
