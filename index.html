@@ -80,7 +80,7 @@ input[type=text]:focus {
 		if(input=="yt"){
 			console.log(input)
 			const { value: text } = await Swal.fire({
-			title: 'enter youtube video id',
+			title: 'enter youtube video link',
 			input: 'text',
 			inputPlaceholder: 'video url'
 			})
@@ -104,8 +104,23 @@ input[type=text]:focus {
 			params: urlencoded,
 			redirect: 'follow'
 			};
-
-			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+text, requestOptions)
+			//https://youtu.be/F0b0dFM8zrc
+			//https://www.youtube.com/watch?v=F0b0dFM8zrc
+			//https://youtube.com/shorts/BMpUgBoYDBk?feature=share
+			//https://youtube.com/shorts/rwlO4LV08kE?feature=share
+			function youtube_parser(url){
+				var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+				var match = url.match(regExp);
+				return (match&&match[7].length==11)? match[7] : false;
+			}
+			let id = youtube_parser(text)
+			if(id==false){
+				id=text.split("?")
+				id = id[0].split("shorts/")
+				id=id[1]
+			}
+			console.log(id)
+			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+id, requestOptions)
 			.then(response => response.json())
 			.then(response => {
 				let object1=response["link"]
@@ -203,7 +218,6 @@ input[type=text]:focus {
 			let data = fetch('https://api.telegram.org/bot'+"5518056932:AAGstUiVjzrGx3IbmCg1_O7lyX4qASUnDK0"+'/getUpdates', options)
 			.then(response => response.json())
 			.then(response => { 
-				console.log("as")
 				const { value: text } =  Swal.fire({
 				title: response["result"][0]["message"]["text"]
 				})
