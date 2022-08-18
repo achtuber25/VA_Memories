@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	
+
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -10,254 +10,258 @@
 	</title>
 </head>
 <style>
-        
+	body {
+		background: #f2f2f2;
+		font-family: 'Open Sans', sans-serif;
+	}
 
-	body{
-	  background: #f2f2f2;
-	  font-family: 'Open Sans', sans-serif;
-	}
-	
 	.search {
-	  width: 100%;
-	  position: relative;
-	  display: flex;
+		width: 100%;
+		position: relative;
+		display: flex;
+
 	}
-	
+
 	.searchTerm {
-	  width: 100%;
-	  border: 3px solid #00B4CC;
-	  border-right: none;
-	  padding: 5px;
-	  height: 20px;
-	  border-radius: 5px 0 0 5px;
-	  outline: none;
-	  color: #9DBFAF;
+		width: 100%;
+		border: 3px solid #11282b;
+		border-right: none;
+		padding: 10px;
+		height: 20px;
+		border-radius: 20px 50px 5px 20px;
+		outline: none;
+		color: #9DBFAF;
 	}
-	
-	.searchTerm:focus{
-	  color: #00B4CC;
+
+	.searchTerm:focus {
+		color: #000000;
+		text-align: center;
 	}
-	
+
 	.searchButton {
-	  width: 40px;
-	  height: 36px;
-	  border: 1px solid #00B4CC;
-	  background: #00B4CC;
-	  text-align: center;
-	  color: #fff;
-	  border-radius: 0 5px 5px 0;
-	  cursor: pointer;
-	  font-size: 20px;
+		width: 45px;
+		height: 46px;
+		border: 1px solid #00B4CC;
+		background: #11282b;
+		text-align: center;
+		color: #fff;
+		border-radius: 25px 15px 25px 0;
+		cursor: pointer;
+		font-size: 20px;
 	}
-	
-	.wrap{
-	  width: 60%;
-	  position: absolute;
-	  top: 40%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
+
+	.wrap {
+		width: 80%;
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
-		</style>
-<body >
+</style>
+
+<body>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+	user-scalable=0'>
 	<!-- input tag -->
 	<div class="wrap">
-        <div class="search">
-           <input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm" placeholder="Search Memories">
-           <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-     </div>
+		<div class="search">
+			<input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm" placeholder="Search Memories"
+				autocomplete="off">
+			<button type="submit" class="searchButton">
+				<i class="fa fa-search"></i>
+			</button>
+		</div>
+	</div>
 
 	<script type="text/javascript">
-    async function search_animal() {
-	let input = document.getElementById('searchbar').value
-	input=input.toLowerCase();
-	function send_msg(text,token){
-		const options = {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				text: text,
-				disable_web_page_preview: false,
-				disable_notification: false,
-				reply_to_message_id: null,
-				chat_id: '1120121505'
-			})
-			};
+		async function search_animal() {
+			let input = document.getElementById('searchbar').value
+			input = input.toLowerCase();
+			function send_msg(text, token) {
+				const options = {
+					method: 'POST',
+					headers: {
+						Accept: 'application/json',
+						'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						text: text,
+						disable_web_page_preview: false,
+						disable_notification: false,
+						reply_to_message_id: null,
+						chat_id: '1120121505'
+					})
+				};
 
-			fetch('https://api.telegram.org/bot'+token+'/sendMessage', options)
-	}
-        if(input=="champa"){
-            window.alert("Welcome to the App")
-            window.location.href = "index2.html"
-        }
-		if(input=="mymood"){
-			const { value: text } = await Swal.fire({
-			title: '🧑 Kesi ho aaj Anaya ki hone wali mammy😘... 👩?',
-			input: 'text',
-			inputLabel: 'emoji or ek word dena mood k according baby',
-			inputPlaceholder: 'Mood'
-			})
-			send_msg(text,"5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
-			if (text) {
-			Swal.fire(`Mood Saved : ${text}`)
+				fetch('https://api.telegram.org/bot' + token + '/sendMessage', options)
 			}
-		}
-		if(input=="yt"){
-			console.log(input)
-			const { value: text } = await Swal.fire({
-			title: '▶️ Paste yt video link',
-			input: 'text',
-			inputPlaceholder: 'video url'
-			})
-			send_msg(text,"5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
-			if (text) {
-			Swal.fire(`Fetching details ...`)
+			if (input == "champa") {
+				window.alert("Welcome to the App")
+				window.location.href = "index2.html"
 			}
-			var myHeaders = new Headers();
-			myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
-			myHeaders.append("X-RapidAPI-Key", "e8a95bf804msh6896acedde80df4p1d7ceajsn4fb093fa5a51");
-
-			// myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
-			// myHeaders.append("X-RapidAPI-Key", "45236d54d6mshc93d1793ed865acp1804d3jsn85233d493cdc");
-			
-
-			var urlencoded = new URLSearchParams();
-
-			var requestOptions = {
-			method: 'GET',
-			headers: myHeaders,
-			params: urlencoded,
-			redirect: 'follow'
-			};
-			//https://youtu.be/F0b0dFM8zrc
-			//https://www.youtube.com/watch?v=F0b0dFM8zrc
-			//https://youtube.com/shorts/BMpUgBoYDBk?feature=share
-			//https://youtube.com/shorts/rwlO4LV08kE?feature=share
-			function youtube_parser(url){
-				var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-				var match = url.match(regExp);
-				return (match&&match[7].length==11)? match[7] : false;
-			}
-			let id = youtube_parser(text)
-			if(id==false){
-				id=text.split("?")
-				id = id[0].split("shorts/")
-				id=id[1]
-			}
-			console.log(id)
-			fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id="+id, requestOptions)
-			.then(response => response.json())
-			.then(response => {
-				let object1=response["link"]
-				let keys = Object.keys(object1);
-				let arr = []
-				let vid1=true
-				let vid2=true
-				let vid3=true
-				let vid4=true
-				let vid5=true
-				let vid6=true
-				let vid7=true
-
-				for(let i=0;i<keys.length;i++){
-				if((object1[keys[i]])[3]=="144p" && vid1==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-					vid1=false
-				}
-				if((object1[keys[i]])[3]=="360p" && vid2==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-					vid2=false
-				}
-				if((object1[keys[i]])[3]=="720p" && vid3==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-					vid3=false
-				}
-				if((object1[keys[i]])[3]=="1080p" && vid4==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-				vid4=false
-				}
-				if((object1[keys[i]])[3]=="OK" && vid5==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-					vid5=false
-				}
-				if((object1[keys[i]])[3]=="2160p60" && vid6==true){
-					arr.push({
-					url:(object1[keys[i]])[0],
-					type:(object1[keys[i]])[3],
-					size:(object1[keys[i]])[1]
-					})
-					vid6=false
-				}
-				}
-				console.log(arr.length)
-				Swal.fire({
-				input: 'select',
-				inputOptions: {
-					"0":arr[0]?arr[0].type+" size "+arr[0].size:"not found",
-					"1":arr[1]?arr[1].type+" size "+arr[1].size:"not found",
-					"2":arr[2]?arr[2].type+" size "+arr[2].size:"not found",
-					"3":arr[3]?arr[3].type+" size "+arr[3].size:"not found",
-					"4":arr[4]?arr[4].type+" size "+arr[4].size:"not found",
-					"5":arr[5]?arr[5].type+" size "+arr[5].size:"not found"
-				},
-				inputValidator: function(value) {
-				window.location.assign(arr[value].url)
-				}
-			})
-		})
-		}
-		if(input=="showmood"){
-			const options = {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json',
-				'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				offset: -1,
-        		limit: 1
-			})
-			};
-
-			let data = fetch('https://api.telegram.org/bot'+"5518056932:AAGstUiVjzrGx3IbmCg1_O7lyX4qASUnDK0"+'/getUpdates', options)
-			.then(response => response.json())
-			.then(response => { 
-				const { value: text } =  Swal.fire({
-				title: response["result"][0]["message"]["text"]
+			if (input == "mymood") {
+				const { value: text } = await Swal.fire({
+					title: '🧑 Kesi ho aaj Anaya ki hone wali mammy😘... 👩?',
+					input: 'text',
+					inputLabel: 'emoji or ek word dena mood k according baby',
+					inputPlaceholder: 'Mood'
 				})
-			})
-			.catch(err => console.error(err));
-			send_msg("mood viewed","5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+				send_msg(text, "5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+				if (text) {
+					Swal.fire(`Mood Saved : ${text}`)
+				}
+			}
+			if (input == "yt") {
+				console.log(input)
+				const { value: text } = await Swal.fire({
+					title: '▶️ Paste yt video link',
+					input: 'text',
+					inputPlaceholder: 'video url'
+				})
+				send_msg(text, "5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+				if (text) {
+					Swal.fire(`Fetching details ...`)
+				}
+				var myHeaders = new Headers();
+				myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
+				myHeaders.append("X-RapidAPI-Key", "e8a95bf804msh6896acedde80df4p1d7ceajsn4fb093fa5a51");
+
+				// myHeaders.append("X-RapidAPI-Host", "ytstream-download-youtube-videos.p.rapidapi.com");
+				// myHeaders.append("X-RapidAPI-Key", "45236d54d6mshc93d1793ed865acp1804d3jsn85233d493cdc");
+
+
+				var urlencoded = new URLSearchParams();
+
+				var requestOptions = {
+					method: 'GET',
+					headers: myHeaders,
+					params: urlencoded,
+					redirect: 'follow'
+				};
+				//https://youtu.be/F0b0dFM8zrc
+				//https://www.youtube.com/watch?v=F0b0dFM8zrc
+				//https://youtube.com/shorts/BMpUgBoYDBk?feature=share
+				//https://youtube.com/shorts/rwlO4LV08kE?feature=share
+				function youtube_parser(url) {
+					var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+					var match = url.match(regExp);
+					return (match && match[7].length == 11) ? match[7] : false;
+				}
+				let id = youtube_parser(text)
+				if (id == false) {
+					id = text.split("?")
+					id = id[0].split("shorts/")
+					id = id[1]
+				}
+				console.log(id)
+				fetch("https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=" + id, requestOptions)
+					.then(response => response.json())
+					.then(response => {
+						let object1 = response["link"]
+						let keys = Object.keys(object1);
+						let arr = []
+						let vid1 = true
+						let vid2 = true
+						let vid3 = true
+						let vid4 = true
+						let vid5 = true
+						let vid6 = true
+						let vid7 = true
+
+						for (let i = 0; i < keys.length; i++) {
+							if ((object1[keys[i]])[3] == "144p" && vid1 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid1 = false
+							}
+							if ((object1[keys[i]])[3] == "360p" && vid2 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid2 = false
+							}
+							if ((object1[keys[i]])[3] == "720p" && vid3 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid3 = false
+							}
+							if ((object1[keys[i]])[3] == "1080p" && vid4 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid4 = false
+							}
+							if ((object1[keys[i]])[3] == "OK" && vid5 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid5 = false
+							}
+							if ((object1[keys[i]])[3] == "2160p60" && vid6 == true) {
+								arr.push({
+									url: (object1[keys[i]])[0],
+									type: (object1[keys[i]])[3],
+									size: (object1[keys[i]])[1]
+								})
+								vid6 = false
+							}
+						}
+						console.log(arr.length)
+						Swal.fire({
+							input: 'select',
+							inputOptions: {
+								"0": arr[0] ? arr[0].type + " size " + arr[0].size : "not found",
+								"1": arr[1] ? arr[1].type + " size " + arr[1].size : "not found",
+								"2": arr[2] ? arr[2].type + " size " + arr[2].size : "not found",
+								"3": arr[3] ? arr[3].type + " size " + arr[3].size : "not found",
+								"4": arr[4] ? arr[4].type + " size " + arr[4].size : "not found",
+								"5": arr[5] ? arr[5].type + " size " + arr[5].size : "not found"
+							},
+							inputValidator: function (value) {
+								window.location.assign(arr[value].url)
+							}
+						})
+					})
+			}
+			if (input == "showmood") {
+				const options = {
+					method: 'POST',
+					headers: {
+						Accept: 'application/json',
+						'User-Agent': 'Telegram Bot SDK - (https://github.com/irazasyed/telegram-bot-sdk)',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						offset: -1,
+						limit: 1
+					})
+				};
+
+				let data = fetch('https://api.telegram.org/bot' + "5518056932:AAGstUiVjzrGx3IbmCg1_O7lyX4qASUnDK0" + '/getUpdates', options)
+					.then(response => response.json())
+					.then(response => {
+						const { value: text } = Swal.fire({
+							title: response["result"][0]["message"]["text"]
+						})
+					})
+					.catch(err => console.error(err));
+				send_msg("mood viewed", "5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
+			}
 		}
-	}
-    </script>
+	</script>
 </body>
 
 </html>
