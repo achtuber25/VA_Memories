@@ -20,25 +20,29 @@
 
 	.book {
 		display: flex;
-		align-items: flex-start;
-		max-width: 400px;
+		align-items: center;
+		text-align: center;
+		border-radius: 10px 30px 10px 30px;
+		max-width: 600px;
 		background-color: skyblue;
 		padding: 10px;
 		margin: 10px 0px;
 	}
 
 	.book img {
-		width: 60px;
 		margin-right: 10px;
+		max-width: 100px;
 	}
 
 	.book h2 {
 		margin: 0px;
+		font-size: medium;
 	}
 
 	body {
 		background: #f2f2f2;
 		font-family: 'Open Sans', sans-serif;
+		padding-top: 20%;
 	}
 
 	.search {
@@ -77,10 +81,10 @@
 	}
 
 	.wrap {
-		width: 80%;
+		width: 90%;
 		max-width: 500px;
 		position: absolute;
-		top: 10%;
+		top: 7%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
@@ -90,27 +94,28 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
 	user-scalable=0'>
 	<main>
-		<div class="wrap">
-			<div class="search">
-				<input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm" placeholder="Search Book"
-					autocomplete="off" autofocus>
+		<section>
+			<div class="wrap">
+				<div class="search">
+					<input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm"
+						placeholder="Search Book" autocomplete="off" autofocus>
 
-				<button type="submit" class="searchButton" onclick="findBooks()">
-					<i class=" fa fa-search"></i>
-				</button>
-			</div>
-
-			<section class=books>
-				<div id=book class=dna-template>
-					<img src=# data-attr-src=~~volumeInfo.imageLinks.thumbnail~~ alt=cover>
-					<div>
-						<h2>~~volumeInfo.title~~</h2>
-						<p>~~volumeInfo.publisher~~</p>
-						<i>~~saleInfo.listPrice.amount~~</i>
-					</div>
+					<button type="submit" class="searchButton" onclick="findBooks()">
+						<i class=" fa fa-search"></i>
+					</button>
 				</div>
-			</section>
-		</div>
+		</section>
+		<section>
+			<div id=book class=dna-template>
+				<img src=# data-attr-src=~~volumeInfo.imageLinks.thumbnail~~ alt=cover>
+				<div>
+					<h2>~~volumeInfo.title~~</h2>
+					<p>~~volumeInfo.publisher~~</p>
+					<i>~~saleInfo.listPrice.amount~~</i>
+				</div>
+			</div>
+			</div>
+		</section>
 
 	</main>
 
