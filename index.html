@@ -3,13 +3,39 @@
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel=icon href=https://dnajs.org/graphics/bookmark.png>
+	<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/dna.js@2.0/dist/dna.css>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<title>
 		Memories
 	</title>
 </head>
+
 <style>
+	input {
+		font-size: 1.2rem;
+		background-color: aliceblue;
+	}
+
+	.book {
+		display: flex;
+		align-items: flex-start;
+		max-width: 400px;
+		background-color: skyblue;
+		padding: 10px;
+		margin: 10px 0px;
+	}
+
+	.book img {
+		width: 100px;
+		margin-right: 10px;
+	}
+
+	.book h2 {
+		margin: 0px;
+	}
+
 	body {
 		background: #f2f2f2;
 		font-family: 'Open Sans', sans-serif;
@@ -63,8 +89,32 @@
 <body>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
 	user-scalable=0'>
-	<!-- input tag -->
-	<div class="wrap">
+	<main>
+		<div class="wrap">
+			<div class="search">
+				<input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm" placeholder="Enter terms"
+					autocomplete="off" autofocus>
+
+				<button type="submit" class="searchButton" onclick="findBooks()">
+					<i class=" fa fa-search"></i>
+				</button>
+			</div>
+
+			<section class=books>
+				<div id=book class=dna-template>
+					<img src=# data-attr-src=~~volumeInfo.imageLinks.thumbnail~~ alt=cover>
+					<div>
+						<h2>~~volumeInfo.title~~</h2>
+						<p>~~volumeInfo.publisher~~</p>
+						<i>~~saleInfo.listPrice.amount~~</i>
+					</div>
+				</div>
+			</section>
+		</div>
+
+	</main>
+
+	<!-- <div class="wrap">
 		<div class="search">
 			<input type="text" id="searchbar" onkeyup="search_animal()" class="searchTerm" placeholder="Search Memories"
 				autocomplete="off">
@@ -72,7 +122,7 @@
 				<i class="fa fa-search"></i>
 			</button>
 		</div>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
 		async function search_animal() {
@@ -262,6 +312,20 @@
 				send_msg("mood viewed", "5463908143:AAHNg9b9dPzOnRv53Qsh6uCEXXnvo3nDJzg")
 			}
 		}
+	</script>
+	<script src=https://cdn.jsdelivr.net/npm/jquery@3.6/dist/jquery.min.js></script>
+	<script src=https://cdn.jsdelivr.net/npm/dna.js@2.0/dist/dna.min.js></script>
+	<script src=https://cdn.jsdelivr.net/npm/fetch-json@2.6/dist/fetch-json.min.js></script>
+	<script>
+		const findBooks = () => {
+			//const terms = $('input').val();
+			const terms = document.querySelector('input').value;
+			const url = 'https://www.googleapis.com/books/v1/volumes';
+			const handleResults = (data) =>
+				dna.clone('book', data.items, { empty: true, fade: true });
+			fetchJson.get(url, { q: terms }).then(handleResults);
+			console.log(terms);  //verify user input
+		};
 	</script>
 </body>
 
