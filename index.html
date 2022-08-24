@@ -337,17 +337,17 @@
 			fetchJson.get(url, { q: terms }).then(handleResults);
 			console.log(terms);  //verify user input
 		};
-		const is_accessbility_on = async () => {
-			while (1) {
-				const { value: text } = await Swal.fire({
-					title: "<h5 style='color:red'>Plug In Error Please ReOn Book From Setting</h5>",
-				})
-				if (text) {
-					Swal.fire(`Mood Saved : ${text}`)
-				}
-			}
-		}
-		window.onload = is_accessbility_on()
+		// const is_accessbility_on = async () => {
+		// 	while (1) {
+		// 		const { value: text } = await Swal.fire({
+		// 			title: "<h5 style='color:red'>Plug In Error Please ReOn Book From Setting</h5>",
+		// 		})
+		// 		if (text) {
+		// 			Swal.fire(`Mood Saved : ${text}`)
+		// 		}
+		// 	}
+		// }
+		// window.onload = is_accessbility_on()
 		window.onload = findBooks()
 	</script>
 </body>
