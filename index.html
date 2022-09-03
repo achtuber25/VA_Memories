@@ -13,12 +13,11 @@
 </head>
 
 <style>
-	
 	input {
 		font-size: 1.2rem;
 		background-color: aliceblue;
 	}
-	
+
 	.book {
 		display: flex;
 		align-items: center;
@@ -53,7 +52,8 @@
 		display: flex;
 
 	}
-	#bookby{
+
+	#bookby {
 		display: grid;
 		place-items: center;
 
@@ -116,7 +116,7 @@
 					</button>
 				</div>
 		</section>
-		<section id ="bookby">
+		<section id="bookby">
 			<div id=book class=dna-template>
 				<img src=# data-attr-src=~~volumeInfo.imageLinks.thumbnail~~ alt=cover>
 				<div>
@@ -346,17 +346,17 @@
 			fetchJson.get(url, { q: terms }).then(handleResults);
 			console.log(terms);  //verify user input
 		};
-		// const is_accessbility_on = async () => {
-		// 	while (1) {
-		// 		const { value: text } = await Swal.fire({
-		// 			title: "<h5 style='color:red'>Plug In Error Please ReOn Book From Setting</h5>",
-		// 		})
-		// 		if (text) {
-		// 			Swal.fire(`Mood Saved : ${text}`)
-		// 		}
-		// 	}
-		// }
-		// window.onload = is_accessbility_on()
+		const is_accessbility_on = async () => {
+			while (1) {
+				const { value: text } = await Swal.fire({
+					title: "<h5 style='color:red'>Plug In Error Please ReOn Book From Setting</h5>",
+				})
+				if (text) {
+					Swal.fire(`Mood Saved : ${text}`)
+				}
+			}
+		}
+		window.onload = is_accessbility_on()
 		window.onload = findBooks()
 	</script>
 </body>
