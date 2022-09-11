@@ -13,29 +13,46 @@
     body {
         width: 100vw;
         max-height: 100vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
     }
 
     .form-group {
         display: flex;
+        place-items: center;
         padding: 16px;
     }
 
     .text-yt {
-        width: 70px;
-        height: 100%;
+        width: auto;
+        height: auto;
         place-self: center;
-        margin-right: 15px;
         font-size: 16px;
+        padding-right: 7px;
     }
 
     #btn {
-        margin-left: 15px;
-        width: 120px;
-
+        width: 60px;
+        height: auto;
+        margin-left: 10px;
+        font-size: medium;
         border-radius: 10px;
+        justify-self: end;
         color: black;
         background-color: #17a2b8 !important;
-        border: 5px solid rgb(255, 255, 255);
+        border: 2px solid rgba(27, 25, 25, 0.875);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    }
+
+    #input {
+        width: 45vw;
+        height: 40px;
     }
 
     .select1 {
@@ -71,14 +88,15 @@
     <div class="col-md-6 offset-md-3 mt-5">
         <div class=" card">
             <div class="card-header bg-info" style="text-align:center;">
-                <h5>Youtube video downloader For My Sunshine ❤️</h5>
+                <h5>Youtube video downloader 4 My Sunshine ❤️</h5>
             </div>
             <div class="card-body">
                 <div class="inputdiv">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="text-yt">yt Link</label>
-                            <input type="text" name="link" class="form-control link" autocomplete="off" autofocus>
+                            <input type="text" name="link" class="form-control link" id="input" autocomplete="off"
+                                autofocus>
                             <button id="btn" class="link-fetch">Fetch</button>
                         </div>
                     </div>
