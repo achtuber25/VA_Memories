@@ -10,6 +10,11 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
 </head>
 <style>
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
     .form-group {
         display: flex;
         padding: 12px;
@@ -43,8 +48,7 @@
     .card {
         width: 80vw;
         margin-left: -15vw !important;
-        padding: 0 !important;
-        height: 30vw;
+        height: 35vh;
         place-self: start;
     }
 </style>
@@ -60,8 +64,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="text-yt">yt Link</label>
-                            <input type="text" name="link" class="form-control link" autocomplete="off" autofocus
-                                autofocus>
+                            <input type="text" name="link" class="form-control link" autocomplete="off" autofocus>
                             <button id="btn" class="link-fetch">Fetch</button>
                         </div>
                     </div>
