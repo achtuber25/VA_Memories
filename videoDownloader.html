@@ -177,12 +177,14 @@
 
         $.ajax(settings).done(function (response) {
             let items = response.videos.items
-            const extensions = ["3gp", "mp4", "m4a", "webm"]
-            const qualities = ["144p", "360p", "480p", "720p", "1080p"]
             let bool = [true]
+            items = items.filter(i => bool.includes(i.hasAudio));
+
+            console.log(items)
+            const extensions = ["3gp", "mp4", "m4a", "webm"]
+            const qualities = ["144p", "240p", "360p", "480p", "720p", "1080p"]
             filterData = items.filter(i => extensions.includes(i.extension));
             filterData = filterData.filter(i => qualities.includes(i.quality));
-            filterData = filterData.filter(i => bool.includes(i.hasAudio));
 
 
             const key = 'quality';
