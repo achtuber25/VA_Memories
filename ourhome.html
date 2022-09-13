@@ -23,7 +23,6 @@
 
     body {
         background-color: rgb(255, 255, 255);
-        background-color: #010a01;
     }
 
     .maingrid {
@@ -51,10 +50,6 @@
         height: 30vh;
         border-radius: 18px;
         border: 3px ridge rgb(0, 0, 0);
-        box-shadow: 0 0 .2rem #fff,
-            0 0 .1rem #fff,
-            0 0 1rem #bc13fe;
-
         background-image: url("");
         overflow: hidden;
         background-color: azure;
@@ -92,14 +87,8 @@
         height: 70px;
         margin: 0px;
         padding: 0px;
-        background-color: rgb(0, 0, 0);
         margin-bottom: 20px;
-        box-shadow: 0 0 .2rem #fff,
-            0 0 .2rem #fff,
-            0 0 2rem #bc13fe,
-            0 0 0.8rem #bc13fe,
-            0 0 2.8rem #bc13fe,
-            inset 0 0 1rem #bc13fe;
+
 
     }
 
@@ -125,7 +114,7 @@
 
     .headerclass {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         width: 40vw;
         height: 30vh;
         border-radius: 0px 0px 30px 30px;
@@ -141,19 +130,13 @@
     }
 
     #img1div {
-        place-self: start;
-        margin-left: 20px;
+        place-self: center;
     }
 
 
     p {
         color: #fff;
-        text-shadow:
-            0 0 7px #fff,
-            0 0 10px #fff,
-            0 0 21px #fff,
-            0 0 102px #bc13fe,
-            0 0 151px #bc13fe;
+
     }
 
     .giphy-embed {
@@ -185,7 +168,9 @@
                 <div id="img1div" onclick="window.dialog.show();">
                     <img class="adityaAnime" id="myPopup" src="anime both.png" alt="">
                 </div>
-
+                <div id="img1div" onclick="window.dialog.show();">
+                    <h1>99</h1>
+                </div>
             </div>
         </div>
         <div class="rooms_direction" id="bedroom">
