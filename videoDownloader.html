@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Youtube Videos Download Script code - nicesnippets.com</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    body {
+        width: 100vw;
+        max-height: 100vh;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .form-group {
+        display: flex;
+        position: relative;
+        place-items: center;
+        padding: 16px;
+    }
+
+    .text-yt {
+        width: auto;
+        height: auto;
+        place-self: center;
+        font-size: 16px;
+        padding-right: 7px;
+    }
+
+    #btn {
+        width: 60px;
+        text-align: center;
+        padding: 2px !important;
+        height: auto;
+        margin-left: 10px;
+        font-size: medium;
+        border-radius: 10px;
+        justify-self: end;
+        color: black;
+        background-color: #17a2b8 !important;
+        border: 2px solid rgba(27, 25, 25, 0.875);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    }
+
+    #input {
+        width: 45vw;
+        height: 40px;
+    }
+
+    .select1 {
+        place-self: center;
+        background-color: aqua;
+    }
+
+    .mt-5 {
+        margin-top: 25vh !important;
+
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+        /* margin-left: 10vw !important; */
+        margin: 5px;
+        place-self: center;
+        border-radius: 15px;
+        /* border: 3px solid black; */
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        overflow: hidden;
+    }
+
+    .card-body {
+        place-items: center;
+    }
+</style>
+
+<body class="bg-dark">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <div class="col-md-6 offset-md-3 mt-5">
+        <div class=" card">
+            <div class="card-header bg-info" style="text-align:center;">
+                <h5>Youtube video downloader 4 My Sunshine ❤️</h5>
+            </div>
+            <div class="card-body">
+                <div class="inputdiv">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="text-yt">Yt Link</label>
+                            <input type="text" name="link" class="form-control link" id="input" autocomplete="off"
+                                autofocus>
+                            <button id="btn" class="link-fetch">Fetch</button>
+                        </div>
+                    </div>
+                </div>
+                <form class="form-download">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" id="form-group" style="display: none;">
+                                <label class="text-weight"><b>Select Video Formate:</b></label>
+                                <select class="form-control formte" id="select1" required>
+                                    <option value="">Loading ...</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mt-4 download-video">
+                                <button class="btn btn-success btn-block click-btn-down" id="submitall" type="button"
+                                    onclick="download()" disabled>Choose &
+                                    Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var filterData;
+    function download() {
+        var fromate = $(".formte").children("option:selected").val();
+        console.log(fromate);
+        console.log(fromate, filterData[fromate].url);
+
+        window.location.href = filterData[fromate].url
+    }
+    function option_fetching() {
+        document.getElementById('form-group').style.cssText = 'display:flex; text-align:center;';
+        var resetBtn = document.getElementById("submitall");
+        resetBtn.disabled = false;
+    }
+    $(".link-fetch").click(function () {
+        var link = $(".link").val();
+        var fromate = $(".formte").children("option:selected").val();
+        var src = "" + link + "=" + fromate + "";
+
+        function youtube_parser(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            return (match && match[7].length == 11) ? match[7] : false;
+        }
+        let id = youtube_parser(link)
+        if (id == false) {
+            id = link.split("?")
+            id = id[0].split("shorts/")
+            id = id[1]
+        }
+        console.log(id)
+        console.log(fromate);
+        //***************************/
+
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://youtube-media-downloader.p.rapidapi.com/v2/video/details?videoId=" + id,
+            "method": "GET",
+            "headers": {
+                "X-RapidAPI-Key": "45236d54d6mshc93d1793ed865acp1804d3jsn85233d493cdc",
+                "X-RapidAPI-Host": "youtube-media-downloader.p.rapidapi.com"
+            }
+        };
+
+        $.ajax(settings).done(function (response) {
+            let items = response.videos.items
+            let bool = [true]
+            items = items.filter(i => bool.includes(i.hasAudio));
+
+            console.log(items)
+            const extensions = ["3gp", "mp4", "m4a", "webm"]
+            const qualities = ["144p", "240p", "360p", "480p", "720p", "1080p"]
+            filterData = items.filter(i => extensions.includes(i.extension));
+            filterData = filterData.filter(i => qualities.includes(i.quality));
+
+
+            const key = 'quality';
+            filterData = [...new Map(filterData.map(item =>
+                [item[key], item])).values()];
+
+
+            let obj = response.audios.items.find(o => o.extension === 'm4a');
+            obj = obj ? obj : response.audios.items[0]
+            obj.quality = "mp3"
+            filterData.push(obj)
+            console.log(filterData);
+
+            $("#select1").empty();
+            for (let i = 0; i < filterData.length; i++) {
+                let title = filterData[i].quality + "  size - " + filterData[i].sizeText
+                $('#select1').append(`<option value="${i}">
+                                       ${filterData[i].quality}
+                                  </option>`);
+            }
+        });
+        option_fetching()
+
+    });
+
+</script>
+
+</html>

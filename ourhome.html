@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Doqi</title>
+</head>
+<script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        console.log("here");
+        popup.classList.toggle("show");
+    }
+</script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .maingrid {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        grid-gap: 0px;
+        align-items: center;
+        justify-items: center;
+        border: 2px solid black;
+        grid-column-gap: 0px;
+        /* background-color: rgb(0, 0, 0); */
+    }
+
+    .rooms_direction {
+        color: black;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .rooms {
+        width: 40vw;
+        height: 30vh;
+        border-radius: 18px;
+        border: 3px ridge rgb(0, 0, 0);
+        background-image: url("");
+        overflow: hidden;
+        background-color: azure;
+
+    }
+
+
+
+    #bedimg {
+        width: 50%;
+        height: 70%;
+
+
+    }
+
+
+    #bedroom {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 3;
+
+    }
+
+
+
+    #header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding: 0;
+    }
+
+    #headerbox {
+        width: 100vw;
+        height: 70px;
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 20px;
+
+
+    }
+
+    #bedroombox {
+        width: 60vw;
+    }
+
+
+    .adityaAnime {
+        object-fit: cover;
+        width: 110px;
+        height: 69px;
+        border-radius: 5px;
+
+    }
+
+    #vanime {
+        object-fit: cover;
+        width: 150px;
+        height: 70px;
+        border-radius: 5px;
+    }
+
+    .headerclass {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 40vw;
+        height: 30vh;
+        border-radius: 0px 0px 30px 30px;
+        /* border: 3px ridge rgb(110, 110, 194);ckkkkkk */
+        place-items: start;
+        overflow: hidden;
+        background-color: azure;
+    }
+
+    #img2div {
+        place-self: center;
+        grid-column-start: 3;
+    }
+
+    #img1div {
+        place-self: center;
+    }
+
+
+    p {
+        color: #fff;
+
+    }
+
+    .giphy-embed {
+        width: 100%;
+        height: 100%;
+        border: none;
+        object-fit: cover;
+    }
+
+    #bonddiv {
+        width: 80px;
+        height: 70px;
+        place-self: center;
+        object-fit: cover;
+        pointer-events: none;
+
+    }
+
+    .headerchildbox {
+        width: 1vw;
+        height: 1h;
+    }
+</style>
+
+<body>
+    <div class="maingrid">
+        <div class="rooms_direction" id="header">
+            <div class="headerclass" id="headerbox">
+                <div id="img1div" onclick="window.dialog.show();">
+                    <img class="adityaAnime" id="myPopup" src="anime both.png" alt="">
+                </div>
+                <div id="img1div" onclick="window.dialog.show();">
+                    <h1>99</h1>
+                </div>
+            </div>
+        </div>
+        <div class="rooms_direction" id="bedroom">
+            <p>Bedroom</p>
+            <div class="rooms" id="bedroombox">
+
+                <!-- <img id="bedimg" src="couple.webp" alt=""> -->
+            </div>
+        </div>
+        <div class="rooms_direction">
+            <div class="rooms">
+            </div>
+            <p>Room2</p>
+
+        </div>
+        <div class="rooms_direction" id="washroom">
+            <div class="rooms" id="washroombox"></div>
+            <p>Room3</p>
+
+        </div>
+        <div class="rooms_direction" id="kitchenPosition">
+            <p> Room4</p>
+            <div class="rooms" id="kitchen">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="rooms_direction">
+            <p> Room6</p>
+            <div class="rooms"></div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
