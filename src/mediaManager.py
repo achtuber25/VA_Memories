@@ -4,10 +4,10 @@ import os
 # Function to rename multiple files
 def main():
     i = 0
-    path = "D:\\BGMI\\VA_Memories\\src\\videos\\"
+    path = "D:\\BGMI\\VA_Memories\\src\\images\\aditya\\"
     for filename in os.listdir(path):
         print(filename)
-        my_dest = "vA" + str(i) + ".mp4"
+        my_dest = "Av" + str(i) + ".jpg"
         my_source = path + filename
         my_dest = path + my_dest
     # rename() function will
