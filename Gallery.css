@@ -8,7 +8,8 @@
  }
 
  .vid {
-   margin-top: 13vh;
+   max-width: 70vw;
+   width: auto;
  }
 
  .u-section-1 .u-gallery-1 {
@@ -26,7 +27,7 @@
  }
 
  .u-section-1 .u-back-image-1 {
-   width: 240px;
+   max-width: 400px;
    left: -50px;
  }
 
