@@ -1,5 +1,5 @@
  .u-section-1 {
-   background-image: url("images/ab4308c749be8b6ce001e5188c587c384fe602bf0af25c835491ffe4ad39fd5e40613d050fce90dda916201b933212bfc98650a5cdfa3d2654f368_1280.jpg");
+   background-image: url("src/webSrc/gallery.jpg");
    background-position: 50% 50%;
  }
 
@@ -11,7 +11,7 @@
    width: 243px;
    height: 243px;
    box-shadow: 2px 2px 8px 0 rgba(128, 128, 128, 1);
-   background-image: url("images/WhatsAppImage2021-12-22at6.23.22PM.jpeg");
+   background-image: url("src/chats/Av35.jpg");
    background-position: 50% 50%;
    filter: brightness(0.8);
    margin: 251px 98px 0 auto;
@@ -27,7 +27,7 @@
    width: 243px;
    height: 243px;
    box-shadow: 2px 2px 8px 0 rgba(128, 128, 128, 1);
-   background-image: url("images/Screenshot_2021-11-06-22-52-56-680_com.whatsapp11.jpg");
+   background-image: url("src/images/champa/vA181.jpg");
    background-position: 50% 50%;
    margin: -153px auto 0 98px;
  }
