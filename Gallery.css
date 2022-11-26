@@ -7,6 +7,10 @@
    min-height: 100vh;
  }
 
+ .vid {
+   margin-top: 13vh;
+ }
+
  .u-section-1 .u-gallery-1 {
    height: 375px;
    margin-top: 60px;

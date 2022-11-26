@@ -7,9 +7,9 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="page_type" content="np-template-header-footer-from-plugin">
-  <title>videos</title>
+  <title>Gallery</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="videos.css" media="screen">
+  <link rel="stylesheet" href="Gallery.css" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 4.2.6, nicepage.com">
@@ -24,11 +24,27 @@
 		"logo": "src/webSrc/vanayaLogo.png"
 }</script>
   <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="videos">
+  <meta property="og:title" content="Gallery">
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
 </head>
 <script src="loginAuth.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    let content = ''
+    for (let i = 0; i < 18; i++) {
+      content = content +
+        '<video width="320" height="240" class = "u-back-slide vid" controls>' +
+        '<source src="src/videos/vA' + i + '.mp4" type="video/mp4"></video>'
+      console.log(content)
+
+    }
+
+    document.getElementById("galleryManager").innerHTML = content
+  });
+
+
+</script>
 
 <body class="u-body u-overlap">
   <header class="u-align-left-md u-align-left-sm u-align-left-xs u-clearfix u-header u-sticky u-sticky-275a u-header"
@@ -53,21 +69,6 @@
                 <rect y="236" width="302" height="30"></rect>
                 <rect y="136" width="302" height="30"></rect>
               </g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
             </svg>
           </a>
         </div>
@@ -84,6 +85,11 @@
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base"
                 href="Admin.html" style="padding: 10px 20px;">Admin</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-white u-text-body-alt-color u-text-hover-palette-2-base"
+                href="gallery2.html" style="padding: 10px 20px;">Gallery &#128102;</a>
+
             </li>
           </ul>
         </div>
@@ -102,6 +108,10 @@
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Admin.html"
                     style="padding: 10px 20px;">Admin</a>
                 </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="gallery2.html"
+                    style="padding: 10px 20px;">Gallery &#128102;</a>
+
+                </li>
               </ul>
             </div>
           </div>
@@ -110,253 +120,48 @@
       </nav>
     </div>
   </header>
-  <section class="u-carousel u-carousel-duration-0 u-slide u-block-cc47-1" id="carousel_2903" data-image-width="1280"
-    data-image-height="621" data-interval="5000" data-u-ride="false">
-    <ol class="u-absolute-hcenter u-carousel-indicators u-block-cc47-2">
-      <li data-u-target="#carousel_2903" data-u-slide-to="0" class="u-active u-gradient"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="1"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="2"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="3"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="4"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="5"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="6"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="7"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="8"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="9"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="10"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-      <li data-u-target="#carousel_2903" class="u-gradient" data-u-slide-to="11"
-        style="background-image: linear-gradient(#478ac9, #db545a);"></li>
-    </ol>
-    <div class="u-carousel-inner" role="listbox">
-      <div class="u-active u-align-center u-carousel-item u-clearfix u-image u-section-1-1" data-image-width="1280"
-        data-image-height="621">
-        <div class="u-align-left u-clearfix u-sheet u-sheet-1">
-          <h1 class="u-align-left u-text u-text-black u-text-1">❤️</h1>
-          <div
-            class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain-xs u-video-cover-lg u-video-cover-md u-video-cover-sm u-video-cover-xl u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/1b173b121e554c65b929341069f8e3df.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-          <img class="u-image u-image-default u-image-1" src="images/WhatsAppImage2021-12-20at6.43.48PM.png" alt=""
-            data-image-width="581" data-image-height="680">
-          </h1>
+  <section class="u-clearfix u-image u-section-1" id="sec-f86a" data-image-width="1280" data-image-height="621">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div
+        class="u-expanded-width u-gallery u-layout-horizontal u-lightbox u-no-transition u-show-text-on-hover u-width-fixed u-gallery-1">
+        <div class="u-gallery-inner u-gallery-inner-1" id="galleryManager">
         </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-2" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/6a780bf81c534c8a90898b35b3423ea4.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-3" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/918218243228_status_7a7bb7209b9b45b393a3cd9b4a319233-1.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-4" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/918218243228_status_7496a5a4187f465693b4612116faf6b0.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-5" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/af0675ac330949208279dddda3c58f81.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-6" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/birthday.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-7" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/f0fa3fcbd68543e8913ce4c5ec0b80d8.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-8" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/cc67dce9f5f34373b3928bc46124c295.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-9" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/fd36facbcab14cb09e35cd03142ab0f9.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-10" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/vandu.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-11" data-image-width="1280"
-        data-image-height="621">
-        <div
-          class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/0acfe92aabb145e0b5551bb56441f8c8.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-center u-carousel-item u-clearfix u-image u-section-1-12" data-image-width="1280"
-        data-image-height="621">
-        <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
-          <div class="u-expanded-width-xs u-opacity u-opacity-95 u-uploaded-video u-video u-video-contain u-video-1"
-            data-animation-name="bounceIn" data-animation-direction="">
-            <div class="embed-responsive">
-              <video class="embed-responsive-item" controls="">
-                <source src="files/918218243228_status_d212c30f6484442e953c2f5fb4f60212-1.mp4" type="video/mp4">
-                <p>Your browser does not support HTML5 video.</p>
-              </video>
-            </div>
-          </div>
-        </div>
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1"
+          href="#" role="button">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+            </svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2"
+          href="#" role="button">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 451.846 451.847">
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+            </svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 451.846 451.847">
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-text-grey-30 u-block-cc47-3"
-      href="#carousel_2903" role="button" data-u-slide="prev">
-      <span aria-hidden="true">
-        <svg viewBox="0 0 477.175 477.175">
-          <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
-		c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
-        </svg>
-      </span>
-      <span class="sr-only">
-        <svg viewBox="0 0 477.175 477.175">
-          <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
-		c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"></path>
-        </svg>
-      </span>
-    </a>
-    <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-text-grey-30 u-block-cc47-4"
-      href="#carousel_2903" role="button" data-u-slide="next">
-      <span aria-hidden="true">
-        <svg viewBox="0 0 477.175 477.175">
-          <path
-            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
-		c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
-          </path>
-        </svg>
-      </span>
-      <span class="sr-only">
-        <svg viewBox="0 0 477.175 477.175">
-          <path
-            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
-		c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z">
-          </path>
-        </svg>
-      </span>
-    </a>
   </section>
 
 </body>
