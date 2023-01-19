@@ -30,6 +30,17 @@
 </head>
 <script src="loginAuth.js"></script>
 <script>
+  while (1) {
+    let foo = prompt('unique keyword');
+    console.log(foo);
+    if (foo == null) {
+      window.location.href = "Memories.html"
+    }
+    if (foo.toLowerCase().trim() == 'champa') {
+      break
+    }
+
+  }
   document.addEventListener("DOMContentLoaded", function (event) {
     let content = ''
     for (let i = 0; i < 4; i++) {
