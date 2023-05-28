@@ -4,7 +4,7 @@ function myFunction() {
     let verified = 0
     console.log(name, key)
 
-    if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
+    if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "vanaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("here is your collection")
