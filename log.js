@@ -4,33 +4,33 @@ function myFunction() {
     let verified = 0
     console.log(name, key)
 
-    if (name.toLowerCase() == "aditya" && key.toLowerCase() == "loveyou2vandna") {
+    if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("here is your collection")
         window.location.href = "Memories.html"
 
-    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveyouaditya") {
+    } else if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("❤️Welcome Baby❤️ and Love You 2 😘")
         window.location.href = "Memories.html"
-    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveuaditya") {
+    } else if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("❤️Welcome Baby❤️ and Love You 2  😘")
         window.location.href = "Memories.html"
-    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveyouaadi") {
+    } else if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("❤️Welcome Baby❤️ and Love You 2 😘")
         window.location.href = "Memories.html"
-    } else if (name.toLowerCase() == "vandna" && key.toLowerCase() == "iloveuaadi") {
+    } else if (name.toLowerCase() == "lovemark" && key.toLowerCase() == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("❤️Welcome Baby❤️ and Love You 2 😘")
         window.location.href = "Memories.html"
-    } else if (name.toLowerCase() == "aditya" && key == "Aot@25sep") {
+    } else if (name.toLowerCase() == "guest" && key == "anaya") {
         verified = 1
         localStorage.setItem("auth", verified)
         alert("Welcome")
